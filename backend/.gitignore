@@ -1,0 +1,6 @@
+env
+cms_backend/db.sqlite3
+cms_backend/__pycache__/
+cms_backend/migrations/__pycache__/
+cms_backend/staticfiles/
+cms_backend/static
