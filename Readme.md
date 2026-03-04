@@ -58,7 +58,6 @@ A simple learning management system with a **Django REST API backend** and a **R
 ### Backend Setup
 
 ```powershell
-cd d:\OSTAAD\full-stack-mini-lms\backend\cms_backend
 python -m venv env
 .\env\Scripts\activate            # or activate.bat / Activate.ps1
 pip install -r requirements.txt
@@ -73,7 +72,6 @@ python manage.py runserver
 ### Frontend Setup
 
 ```bash
-cd d:/OSTAAD/full-stack-mini-lms/frontend
 npm install
 npm run dev
 ```
