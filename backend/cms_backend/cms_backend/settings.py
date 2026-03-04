@@ -139,9 +139,7 @@ REST_FRAMEWORK = {
     "DEFAULT_THROTTLE_CLASSES": [
         "rest_framework.throttling.ScopedRateThrottle",
     ],
-    "DEFAULT_THROTTLE_RATES": {
-        "login": "10/hour",
-    },
+    "DEFAULT_THROTTLE_RATES": {"login": "100/hour"},
     # Permission
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     # Pagination

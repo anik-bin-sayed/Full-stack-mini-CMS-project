@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Button from "../../Utils/auth/Button";
 import Avatar from "../../Utils/auth/Avatar";
@@ -7,6 +7,7 @@ import FloatingInput from "../../Utils/auth/FloatingInput";
 import { useRegisterUserMutation } from "../../features/auth/authApi";
 import Navbar from "../../components/Navbar";
 import PageTitle from "../../components/PageTitle";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,8 @@ const Register = () => {
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const [registerUser, { isLoading }] = useRegisterUserMutation();
 
@@ -28,24 +31,27 @@ const Register = () => {
     });
   };
 
+  const resetForm = () => {
+    setFormData({
+      full_name: "",
+      username: "",
+      email: "",
+      password: "",
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await registerUser(formData).unwrap();
-      setFormData({
-        full_name: "",
-        username: "",
-        email: "",
-        password: "",
-      });
+      const res = await registerUser(formData).unwrap();
+      resetForm();
+      toast.success(res?.message || "Registration successful! Please login.");
+      navigate("/login");
     } catch (error) {
-      console.log(error);
-      setFormData({
-        full_name: "",
-        username: "",
-        email: "",
-        password: "",
-      });
+      resetForm();
+      toast.error(
+        error?.data?.email[0] || "Registration failed. Please try again.",
+      );
     }
   };
 

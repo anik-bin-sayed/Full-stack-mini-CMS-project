@@ -4,7 +4,7 @@ A simple learning management system with a **Django REST API backend** and a **R
 
 ---
 
-## 📦 Features
+## Features
 
 ### Backend (Django + DRF)
 
@@ -47,7 +47,7 @@ A simple learning management system with a **Django REST API backend** and a **R
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -74,7 +74,7 @@ python manage.py runserver
 
 ```bash
 cd d:/OSTAAD/full-stack-mini-lms/frontend
-npm install            # or yarn
+npm install
 npm run dev
 ```
 
@@ -85,7 +85,7 @@ npm run dev
 
 ---
 
-## 🛠 Development Notes
+## Development Notes
 
 - Media files are stored in `backend/cms_backend/media/`.
 - Run tests within each Django app using `python manage.py test <app>`.

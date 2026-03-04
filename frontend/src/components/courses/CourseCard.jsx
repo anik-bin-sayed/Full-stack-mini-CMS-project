@@ -126,7 +126,7 @@ const CourseCard = ({
             py-2
             rounded"
           >
-            Not Your Course
+            Not Your created Course
           </button>
         ) : null}
 

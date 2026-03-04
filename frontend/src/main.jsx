@@ -3,7 +3,7 @@ import "./index.css";
 
 import { Provider } from "react-redux";
 
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, Slide } from "react-toastify";
 // Toaster css
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,12 +14,13 @@ createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <App />
     <ToastContainer
-      position="top-center"
+      position="bottom-left"
       autoClose={3000}
       hideProgressBar={false}
       closeOnClick
       pauseOnHover
       theme="colored"
+      transition={Slide}
     />
   </Provider>,
 );

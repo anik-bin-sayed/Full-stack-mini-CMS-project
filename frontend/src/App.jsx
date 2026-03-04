@@ -6,7 +6,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import Loader from "./components/Loader";
+
 import { setUser } from "./features/auth/authSlice";
 import { useProfileQuery } from "./features/auth/authApi";
 

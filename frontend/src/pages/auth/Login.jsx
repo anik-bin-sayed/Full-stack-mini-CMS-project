@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { userAuthenticated } from "../../features/auth/authSlice";
 import Navbar from "../../components/Navbar";
 import PageTitle from "../../components/PageTitle";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -41,12 +42,15 @@ const Login = () => {
     e.preventDefault();
     try {
       await loginUser(formData).unwrap();
+
       dispatch(userAuthenticated());
       navigate("/dashboard");
+      toast.success("Login successful!");
       resetForm();
     } catch (error) {
       console.log(error);
       resetForm();
+      toast.error("Login failed. Please check your credentials.");
     }
   };
 
